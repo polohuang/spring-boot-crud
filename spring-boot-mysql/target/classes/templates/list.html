@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Paul</title>
+  <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css"></link>
+  <script src="/webjars/1.11.1/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="jumbotron text-center">
+	  <h1>Home Page</h1>
+	</div>
+	  
+	<div class="container">
+	  <div class="pull-right">
+	  	<a href="create" class="btn btn-info" role="button">新增</a>
+	  	<a href="update" class="btn btn-info" role="button">更改</a>
+	  	<a href="delete" class="btn btn-info" role="button">刪除</a>
+	  </div>
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>#</th>
+	        <th>Name</th>
+	        <th>Email</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="user:${user}">
+	        <td th:text="${user.id}"></td>
+	        <td th:text="${user.name}"></td>
+	        <td th:text="${user.email}"></td>
+	      </tr>
+	    </tbody>
+	  </table>
+	</div>
+</body>
+</html>
+
