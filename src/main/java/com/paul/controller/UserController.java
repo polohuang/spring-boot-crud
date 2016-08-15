@@ -58,7 +58,7 @@ public class UserController {
 	public String newUser(@RequestParam(value = "name") String name, @RequestParam(value = "email") String email) {
 		User user = new User(name, email);
 		repo.save(user);
-		return "redirect:../";
+		return "redirect:/";
 	}
 
 	@RequestMapping("/user/delete")
@@ -70,7 +70,7 @@ public class UserController {
 	@RequestMapping("/user/delete/{id}")
 	public String deleteUser(@RequestParam(value = "id") Long id) {
 		repo.delete(id);
-		return "redirect:../";
+		return "redirect:/";
 	}
 
 	@RequestMapping("/user/update")
@@ -85,6 +85,6 @@ public class UserController {
 		user.setName(name);
 		user.setEmail(email);
 		repo.save(user);
-		return "redirect:../";
+		return "redirect:/";
 	}
 }
